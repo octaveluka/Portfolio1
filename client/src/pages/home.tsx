@@ -9,8 +9,10 @@ import {
   Cpu, 
   Menu, 
   X, 
-  Instagram, 
-  Linkedin, 
+  Facebook, 
+  Youtube, 
+  Phone,
+  MessageCircle,
   Mail, 
   ArrowRight,
   ExternalLink,
@@ -490,25 +492,43 @@ export default function Home() {
               </p>
               
               <div className="space-y-4 pt-4">
-                <a href="mailto:contact@portfolio.com" className="flex items-center space-x-4 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-colors group">
+                <a href="mailto:ipoppolive6@gmail.com" className="flex items-center space-x-4 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-colors group">
                   <div className="bg-primary/10 p-3 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">contact@portfolio.com</p>
+                    <p className="font-medium">ipoppolive6@gmail.com</p>
+                  </div>
+                </a>
+
+                <a href="https://wa.me/2290140912272" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 transition-colors group">
+                  <div className="bg-green-500/10 p-3 rounded-full text-green-500 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">WhatsApp</p>
+                    <p className="font-medium">+229 01 40 91 22 72</p>
                   </div>
                 </a>
                 
-                <div className="flex gap-4">
-                  <a href="#" className="flex-1 flex items-center justify-center space-x-2 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 hover:text-primary transition-all">
-                    <Instagram className="w-5 h-5" />
-                    <span>Instagram</span>
+                <div className="grid grid-cols-2 gap-4">
+                  <a href="https://www.facebook.com/StanleyStaw" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 hover:text-blue-500 transition-all">
+                    <Facebook className="w-5 h-5" />
+                    <span>Facebook</span>
                   </a>
-                  <a href="#" className="flex-1 flex items-center justify-center space-x-2 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 hover:text-primary transition-all">
-                    <Linkedin className="w-5 h-5" />
-                    <span>LinkedIn</span>
+                  <a href="https://youtube.com/@stanleystawa?si=SFNXbBjFMbFPoH4o" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 hover:text-red-500 transition-all">
+                    <Youtube className="w-5 h-5" />
+                    <span>YouTube</span>
                   </a>
+                   <a href="https://vm.tiktok.com/ZMHwPps9aBPRo-ERXRE/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 hover:text-pink-500 transition-all">
+                    <Video className="w-5 h-5" />
+                    <span>TikTok</span>
+                  </a>
+                   <div className="flex items-center justify-center space-x-2 p-4 rounded-xl bg-card border border-white/5 hover:border-primary/30 hover:text-indigo-500 transition-all cursor-pointer" onClick={() => { navigator.clipboard.writeText('stanleystawa_58068'); toast({title: "Copié !", description: "Pseudo Discord copié dans le presse-papier."}) }}>
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Discord</span>
+                  </div>
                 </div>
               </div>
             </div>
