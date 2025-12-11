@@ -5,9 +5,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+} from "@/components/dialog";
+import { Badge } from "@/components/badge";
+import { Button } from "@/components/button";
 import { ExternalLink, Calendar, User, Layers } from "lucide-react";
 
 interface ProjectDialogProps {

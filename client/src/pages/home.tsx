@@ -39,11 +39,11 @@ import pptSlide from "@assets/generated_images/creative_powerpoint_presentation_
 import damagedUserPhoto from "@assets/Gemini_Generated_Image_a2jasga2jasga2ja~2_1765438664927.png";
 import restoredUserPhoto from "@assets/Gemini_Generated_Image_m0xy6tm0xy6tm0xy~2_1765438664975.png";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/button";
+import { Card, CardContent } from "@/components/card";
+import { Input } from "@/components/input";
+import { Textarea } from "@/components/textarea";
+import { Badge } from "@/components/badge";
 import { useToast } from "@/hooks/use-toast";
 
 // Custom Components
