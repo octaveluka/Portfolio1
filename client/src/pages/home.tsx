@@ -33,6 +33,10 @@ import textureOverlay from "@assets/generated_images/film_dust_and_scratches_tex
 import wordDoc from "@assets/generated_images/modern_professional_word_document_design.png";
 import pptSlide from "@assets/generated_images/creative_powerpoint_presentation_slide_design.png";
 
+// User provided images for restoration
+import damagedUserPhoto from "@assets/Gemini_Generated_Image_a2jasga2jasga2ja~2_1765438664927.png";
+import restoredUserPhoto from "@assets/Gemini_Generated_Image_m0xy6tm0xy6tm0xy~2_1765438664975.png";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -357,10 +361,8 @@ export default function Home() {
                 <div className="order-2 md:order-1">
                     <div className="relative rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl h-[400px] md:h-[500px]">
                         <BeforeAfter 
-                            beforeImage={cleanPortrait}
-                            afterImage={cleanPortrait}
-                            overlayTexture={textureOverlay}
-                            enableFilters={true}
+                            beforeImage={damagedUserPhoto}
+                            afterImage={restoredUserPhoto}
                             className="h-full"
                         />
                     </div>
