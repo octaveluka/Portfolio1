@@ -28,8 +28,8 @@ import videoImg from "@assets/generated_images/video_editing_timeline_interface_
 import webImg from "@assets/generated_images/modern_code_and_web_design_concept.png";
 
 // New assets
-import damagedPhoto from "@assets/generated_images/old_damaged_black_and_white_portrait_photo.png";
-import restoredPhoto from "@assets/generated_images/restored_clean_colorized_portrait_photo.png";
+import cleanPortrait from "@assets/generated_images/clean_vintage_portrait_of_a_woman_1950s_style.png";
+import textureOverlay from "@assets/generated_images/film_dust_and_scratches_texture.png";
 import wordDoc from "@assets/generated_images/modern_professional_word_document_design.png";
 import pptSlide from "@assets/generated_images/creative_powerpoint_presentation_slide_design.png";
 
@@ -357,8 +357,10 @@ export default function Home() {
                 <div className="order-2 md:order-1">
                     <div className="relative rounded-2xl overflow-hidden border-4 border-white/10 shadow-2xl h-[400px] md:h-[500px]">
                         <BeforeAfter 
-                            beforeImage={damagedPhoto}
-                            afterImage={restoredPhoto}
+                            beforeImage={cleanPortrait}
+                            afterImage={cleanPortrait}
+                            overlayTexture={textureOverlay}
+                            enableFilters={true}
                             className="h-full"
                         />
                     </div>

@@ -5,9 +5,17 @@ interface BeforeAfterProps {
   beforeImage: string;
   afterImage: string;
   className?: string;
+  overlayTexture?: string;
+  enableFilters?: boolean;
 }
 
-export function BeforeAfter({ beforeImage, afterImage, className = "" }: BeforeAfterProps) {
+export function BeforeAfter({ 
+  beforeImage, 
+  afterImage, 
+  className = "", 
+  overlayTexture, 
+  enableFilters = false 
+}: BeforeAfterProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -65,13 +73,31 @@ export function BeforeAfter({ beforeImage, afterImage, className = "" }: BeforeA
         className="absolute top-0 left-0 h-full w-full overflow-hidden"
         style={{ width: `${sliderPosition}%` }}
       >
-        <img 
-          src={beforeImage} 
-          alt="Before" 
-          className="absolute top-0 left-0 h-full max-w-none object-cover"
-          style={{ width: containerRef.current?.offsetWidth || '100%' }}
-          draggable={false}
-        />
+        <div 
+           className="absolute top-0 left-0 h-full w-full max-w-none"
+           style={{ width: containerRef.current?.offsetWidth || '100%' }}
+        >
+            <img 
+              src={beforeImage} 
+              alt="Before" 
+              className="absolute top-0 left-0 w-full h-full object-cover"
+              style={{ filter: enableFilters ? 'sepia(0.8) contrast(1.2) brightness(0.9) grayscale(0.5) blur(0.5px)' : 'none' }}
+              draggable={false}
+            />
+            
+            {/* Texture Overlay for simulated damage */}
+            {overlayTexture && (
+                <div 
+                    className="absolute inset-0 z-10 opacity-70 mix-blend-screen pointer-events-none"
+                    style={{ 
+                        backgroundImage: `url(${overlayTexture})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        filter: 'contrast(1.5)'
+                    }}
+                ></div>
+            )}
+        </div>
       </div>
 
       {/* Slider Handle */}
@@ -85,10 +111,10 @@ export function BeforeAfter({ beforeImage, afterImage, className = "" }: BeforeA
       </div>
 
       {/* Labels */}
-      <div className="absolute bottom-4 left-4 bg-black/60 text-white px-2 py-1 text-xs rounded pointer-events-none uppercase font-bold tracking-wider">
+      <div className="absolute bottom-4 left-4 bg-black/60 text-white px-2 py-1 text-xs rounded pointer-events-none uppercase font-bold tracking-wider z-30">
         Avant
       </div>
-      <div className="absolute bottom-4 right-4 bg-black/60 text-white px-2 py-1 text-xs rounded pointer-events-none uppercase font-bold tracking-wider">
+      <div className="absolute bottom-4 right-4 bg-black/60 text-white px-2 py-1 text-xs rounded pointer-events-none uppercase font-bold tracking-wider z-30">
         Après
       </div>
     </div>
